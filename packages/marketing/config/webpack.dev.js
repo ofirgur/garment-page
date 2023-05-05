@@ -12,6 +12,7 @@ const devConfig = {
     devServer: {
         port: 8081,
         historyApiFallback: true,
+        hot: true,
     },
     plugins: [
         new ModuleFederationPlugin({
