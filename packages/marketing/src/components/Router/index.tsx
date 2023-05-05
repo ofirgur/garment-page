@@ -6,8 +6,10 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
+import Outlet from '../Outlet';
+
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<p>Layout</p>} />),
+  createRoutesFromElements(<Route path="/" element={<Outlet />} />),
 );
 
 const Router = () => {
