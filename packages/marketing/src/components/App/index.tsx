@@ -1,22 +1,17 @@
-import * as React from "react";
-import { Router } from "react-router-dom";
+import * as React from 'react';
 
-import Theme from "../Theme";
-import Layout from "../Layout";
+import Theme from '../Theme';
+import Layout from '../Layout';
+import Router from '../Router';
 
-interface AppProps {
-  history: any;
-}
-
-export default (props: AppProps) => {
-  const { history } = props;
-  console.log("container injects history: ", history);
-
+const App = () => {
   return (
     <Theme>
-      <Router history={history}>
-        <Layout />
-      </Router>
+      <Layout>
+        <Router />
+      </Layout>
     </Theme>
   );
 };
+
+export default App;

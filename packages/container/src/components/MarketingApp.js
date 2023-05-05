@@ -16,9 +16,11 @@ export default () => {
                     history.push(nextPathname);
                 }
             }
-        });
-
-        history.listen(onParentNavigate);
+        }) || {};
+        
+        if (onParentNavigate) {
+            history.listen(onParentNavigate);
+        }
     }, []);
 
     return <div ref={ref} />

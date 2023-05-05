@@ -1,7 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { LayoutStyled } from "./styled";
+import { LayoutStyled } from './styled';
+import { LayoutProps } from './type';
 
-export default () => {
-  return <LayoutStyled>Layout</LayoutStyled>;
+const Layout = ({ children }: LayoutProps) => {
+  return <LayoutStyled>{children}</LayoutStyled>;
 };
+
+export default Layout;
