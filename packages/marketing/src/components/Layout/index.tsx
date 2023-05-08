@@ -19,7 +19,7 @@ const Layout = () => {
 
   const handleClick = () => {
     setPageState({
-      users: [...pageState.users, { firstName: 'Michael', lastName: 'Jordan' }],
+      users: [...pageState.users, data.map((x: any) => x.name)],
     });
   };
 

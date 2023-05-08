@@ -8,6 +8,5 @@ export interface PageState {
 }
 
 export type User = {
-  firstName: string;
-  lastName: string;
+  name: string;
 };
