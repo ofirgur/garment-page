@@ -10,4 +10,6 @@ export interface PageState {
 export type User = {
   id: number;
   name: string;
+  locale: string;
+  currency: string;
 };
