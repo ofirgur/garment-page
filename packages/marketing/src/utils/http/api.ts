@@ -11,7 +11,7 @@ You cannot override NODE_ENV manually.
 This prevents developers from accidentally deploying a slow development build to production.
 */
 
-export const USE_MOCK = process.env.NODE_ENV !== 'production';
+export const USE_MOCK = false; // process.env.NODE_ENV !== 'production';
 export const DEFAULT_BASE_URL = 'https://jsonplaceholder.typicode.com';
 export const DEFAULT_MOCK_CONFIG = {
   mockDelay: 2000,

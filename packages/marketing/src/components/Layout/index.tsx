@@ -1,10 +1,20 @@
 import * as React from 'react';
+import { useQuery } from 'react-query';
 
+import { createAPIAction } from '../../utils/http/api';
 import { LayoutStyled } from './styled';
-import { LayoutProps } from './type';
 
-const Layout = ({ children }: LayoutProps) => {
-  return <LayoutStyled>{children}</LayoutStyled>;
+const Layout = () => {
+  const { data } = useQuery(
+    ['repo'],
+    createAPIAction({
+      url: 'users',
+    }),
+  );
+
+  console.log('data: ', data);
+
+  return <LayoutStyled>Layout</LayoutStyled>;
 };
 
 export default Layout;
