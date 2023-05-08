@@ -10,7 +10,7 @@ const Layout = () => {
   const { data } = useQuery(
     ['repo'],
     createAPIAction({
-      url: 'users',
+      url: 'users/1',
     }),
   );
 
@@ -19,7 +19,7 @@ const Layout = () => {
 
   const handleClick = () => {
     setPageState({
-      users: [...pageState.users, data.map((x: any) => x.name)],
+      user: data,
     });
   };
 
