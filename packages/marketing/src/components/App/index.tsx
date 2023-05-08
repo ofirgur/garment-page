@@ -1,17 +1,21 @@
 import * as React from 'react';
 
+import { PageStateContextProvider } from '../../utils/state';
+import { INITIAL_PAGE_STATE } from '../../utils/state/initial';
 import ReactQueryProvider from '../ReactQueryProvider';
-import Theme from '../Theme';
+import ThemeProvider from '../Theme';
 import Router from '../Router';
 // import Outlet from '../Outlet';
 
 const App = () => {
   return (
-    <Theme>
-      <ReactQueryProvider>
-        <Router />
-      </ReactQueryProvider>
-    </Theme>
+    <PageStateContextProvider initialState={INITIAL_PAGE_STATE}>
+      <ThemeProvider>
+        <ReactQueryProvider>
+          <Router />
+        </ReactQueryProvider>
+      </ThemeProvider>
+    </PageStateContextProvider>
   );
 };
 
