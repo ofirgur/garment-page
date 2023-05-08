@@ -7,7 +7,7 @@ const Outlet = () => {
   const { data } = useQuery(
     ['repo'],
     getData({
-      url: 'https://api.github.com/users/eunit99/repos',
+      url: 'users',
     }),
   );
 
