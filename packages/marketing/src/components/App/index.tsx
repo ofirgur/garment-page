@@ -1,15 +1,18 @@
 import * as React from 'react';
 
+import ReactQueryProvider from '../ReactQueryProvider';
 import Theme from '../Theme';
 import Layout from '../Layout';
-import Router from '../Router';
+import Outlet from '../Outlet';
 
 const App = () => {
   return (
     <Theme>
-      <Layout>
-        <Router />
-      </Layout>
+      <ReactQueryProvider>
+        <Layout>
+          <Outlet />
+        </Layout>
+      </ReactQueryProvider>
     </Theme>
   );
 };
