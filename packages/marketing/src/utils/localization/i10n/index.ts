@@ -8,7 +8,7 @@ export const numberFormat =
   };
 
 export const dateFormat =
-  (options: Record<string, string>) => (locale: string) => (date: string) => {
+  (locale: string, options: Intl.DateTimeFormatOptions) => (date: string) => {
     if (!date || date === '') return;
 
     return new Intl.DateTimeFormat(locale, options).format(new Date(date));

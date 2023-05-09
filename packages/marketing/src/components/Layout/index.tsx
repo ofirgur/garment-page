@@ -3,6 +3,8 @@ import { useQuery } from 'react-query';
 
 import { usePageState } from '../../utils/state';
 import { createAPIAction } from '../../utils/api';
+import DateFormat from '../../components/Localization/DateFormat';
+import NumberFormat from '../../components/Localization/NumberFormat';
 import { LayoutStyled } from './styled';
 
 const Layout = () => {
@@ -28,12 +30,18 @@ const Layout = () => {
     ),
   );
 
+  const isoString = new Date().toISOString();
+  const number = 123456.789;
+
   console.log('pageState: ', pageState);
   console.log('data: ', data);
 
   const handleClick = () => {
     setPageState({
-      user: data,
+      user: {
+        ...pageState.user,
+        ...data,
+      },
     });
   };
 
@@ -50,6 +58,23 @@ const Layout = () => {
       <p>User: {data.name}</p>
       <p>Locale: {data.locale}</p>
       <p>Currency: {data.currency}</p>
+      <hr />
+      <p>ISO String: {isoString}</p>
+      <p>DateFormat:</p>
+      <DateFormat date={isoString} locale={data.locale} />
+      <hr />
+      <p>Number: {number}</p>
+      <p>NumberFormat</p>
+      <NumberFormat number={number} locale={data.locale} />
+      <p>Currency</p>
+      <NumberFormat
+        number={number}
+        locale={data.locale}
+        options={{
+          style: 'currency',
+          currency: data.currency,
+        }}
+      />
     </LayoutStyled>
   );
 };
