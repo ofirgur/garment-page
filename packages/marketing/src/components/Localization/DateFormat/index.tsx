@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { dateFormat } from '../../../utils/localization';
+import { dateFormat } from '../../../utils/localization/i10n';
 import { DateFormatStyled } from './styled';
 
 interface DateFormatProps {
