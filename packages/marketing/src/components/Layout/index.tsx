@@ -5,9 +5,6 @@ import { usePageState } from '../../utils/state';
 import { createAPIAction } from '../../utils/api';
 import { LayoutStyled } from './styled';
 
-const number = 123456.789;
-const iso = '2023-05-08T13:00:17Z';
-
 const Layout = () => {
   const { pageState, setPageState } = usePageState();
   const { isLoading, data } = useQuery(
@@ -53,23 +50,6 @@ const Layout = () => {
       <p>User: {data.name}</p>
       <p>Locale: {data.locale}</p>
       <p>Currency: {data.currency}</p>
-      <hr />
-      <p>Use Localization:</p>
-      <p>Number: {number}</p>
-      <p>Format: {new Intl.NumberFormat(data.locale).format(number)}</p>
-      <p>
-        Currency:
-        {new Intl.NumberFormat(data.locale, {
-          style: 'currency',
-          currency: data.currency,
-        }).format(number)}
-      </p>
-      <p>ISO String: {iso}</p>
-      <p>
-        ISO to Date (from server):{' '}
-        {new Intl.DateTimeFormat(data.locale).format(new Date(iso))}
-      </p>
-      <p>Date to ISO (to server): {new Date(iso).toISOString()}</p>
     </LayoutStyled>
   );
 };

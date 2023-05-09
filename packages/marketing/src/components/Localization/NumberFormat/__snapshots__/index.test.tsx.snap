@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberFormat Should render correctly 1`] = `
+<div>
+  <span
+    class="sc-bgqQcB"
+  >
+    123,456.789
+  </span>
+</div>
+`;
+
+exports[`NumberFormat Should render correctly with options 1`] = `
+<div>
+  <span
+    class="sc-bgqQcB"
+  >
+    ￥123,457
+  </span>
+</div>
+`;

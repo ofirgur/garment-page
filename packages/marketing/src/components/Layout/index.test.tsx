@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { render } from 'utils/test';
+import { render } from '../../utils/test';
 
 import Layout from './index';
 
