@@ -4,14 +4,14 @@ import { dateFormat } from '../../../utils/localization/i10n';
 import { DateFormatStyled } from './styled';
 
 interface DateFormatProps {
-  date: string;
-  locale: string;
+  date?: string | number | Date;
+  locale?: string;
   options?: Record<string, string>;
 }
 
 const DateFormat = ({ date, locale, options }: DateFormatProps) => {
   return (
-    <DateFormatStyled>{dateFormat(locale, options)(date)}</DateFormatStyled>
+    <DateFormatStyled>{dateFormat(date, locale, options)}</DateFormatStyled>
   );
 };
 

@@ -1,18 +1,14 @@
-export const numberFormat =
-  (options?: Record<string, string>) =>
-  (locale: string) =>
-  (number: number) => {
-    if (!number) return;
+export const numberFormat = (
+  number?: number,
+  locales?: string | string[],
+  options?: Intl.NumberFormatOptions,
+) => new Intl.NumberFormat(locales, options).format(number | 0);
 
-    return new Intl.NumberFormat(locale, options).format(number);
-  };
-
-export const dateFormat =
-  (locale: string, options: Intl.DateTimeFormatOptions) => (date: string) => {
-    if (!date || date === '') return;
-
-    return new Intl.DateTimeFormat(locale, options).format(new Date(date));
-  };
+export const dateFormat = (
+  date?: string | number | Date,
+  locale?: string | string[],
+  options?: Intl.DateTimeFormatOptions,
+) => new Intl.DateTimeFormat(locale, options).format(new Date(date));
 
 // convert from server
 export const isoStringToDate = (isoString: string) => {
