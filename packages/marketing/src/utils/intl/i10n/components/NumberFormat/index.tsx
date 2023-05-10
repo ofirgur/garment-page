@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { numberFormat } from '../../../utils/intl/i10n';
+import { numberFormat } from '../..';
 import { NumberFormatStyled } from './styled';
 
 interface NumberFormatProps {

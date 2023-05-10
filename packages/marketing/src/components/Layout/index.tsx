@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 
 import { usePageState } from '../../utils/state';
 import { createAPIAction } from '../../utils/api';
-import DateFormat from '../Intl/DateFormat';
-import NumberFormat from '../Intl/NumberFormat';
+import DateFormat from '../../utils/intl/i10n/components/DateFormat';
+import NumberFormat from '../../utils/intl/i10n/components/NumberFormat';
 import { LayoutStyled } from './styled';
 
 const Layout = () => {
