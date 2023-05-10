@@ -5,7 +5,7 @@ exports[`NumberFormat Should render correctly 1`] = `
   <span
     class="sc-bgqQcB"
   >
-    123,456.789
+    123,456
   </span>
 </div>
 `;
@@ -15,7 +15,7 @@ exports[`NumberFormat Should render correctly with options 1`] = `
   <span
     class="sc-bgqQcB"
   >
-    ￥123,457
+    ￥123,456
   </span>
 </div>
 `;
