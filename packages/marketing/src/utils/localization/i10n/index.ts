@@ -11,7 +11,7 @@ export const dateFormat = (
 ) => new Intl.DateTimeFormat(locale, options).format(new Date(date));
 
 // convert from server
-export const isoStringToDate = (isoString: string) => {
+export const isoStringToDate = (isoString: string | number | Date) => {
   return new Date(isoString);
 };
 
