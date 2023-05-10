@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { useQuery } from 'react-query';
+import { useTranslation } from 'react-i18next';
 
 import { usePageState } from '../../utils/state';
 import { createAPIAction } from '../../utils/api';
-import DateFormat from '../../components/Localization/DateFormat';
-import NumberFormat from '../../components/Localization/NumberFormat';
+import DateFormat from '../Intl/DateFormat';
+import NumberFormat from '../Intl/NumberFormat';
 import { LayoutStyled } from './styled';
 
 const Layout = () => {
+  const { t, i18n } = useTranslation();
   const { pageState, setPageState } = usePageState();
   const { isLoading, data } = useQuery(
     ['repo'],
@@ -24,6 +26,7 @@ const Layout = () => {
             name: 'Ofir Gur',
             locale: 'ja-JP',
             currency: 'JPY',
+            lang: 'fr',
           },
         },
       },
@@ -45,14 +48,21 @@ const Layout = () => {
     });
   };
 
+  const handleLang = () => {
+    i18n.changeLanguage(data.lang);
+  };
+
   if (isLoading) return <LayoutStyled>Loading</LayoutStyled>;
 
   return (
     <LayoutStyled>
-      Layout
+      <h1>{t('Welcome.Text')}</h1>
       <hr />
       <p>
-        Use API: <button onClick={handleClick}>Add to State</button>
+        <button onClick={handleClick}>Add to State</button>
+      </p>
+      <p>
+        <button onClick={handleLang}>Change Lang</button>
       </p>
       <hr />
       <p>User: {data.name}</p>

@@ -5,7 +5,7 @@ import { INITIAL_PAGE_STATE } from '../../utils/state/initial';
 import ReactQueryProvider from '../ReactQueryProvider';
 import ThemeProvider from '../Theme';
 import Router from '../Router';
-// import Outlet from '../Outlet';
+import '../../utils/intl/i18n';
 
 const App = () => {
   return (
