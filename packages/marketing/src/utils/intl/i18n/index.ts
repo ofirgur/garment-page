@@ -16,6 +16,11 @@ const resources = {
       'Welcome.Text': 'Bienvenue',
     },
   },
+  ja: {
+    translation: {
+      'Welcome.Text': 'こんにちは世界',
+    },
+  },
 };
 
 i18n

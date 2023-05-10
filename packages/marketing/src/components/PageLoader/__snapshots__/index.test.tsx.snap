@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageLoader Should render correctly 1`] = `
+<div>
+  <div
+    class="sc-bgqQcB lmscjI"
+  >
+    Loading...
+  </div>
+</div>
+`;

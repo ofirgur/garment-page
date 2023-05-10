@@ -4,6 +4,7 @@ export const theme = {
     onyx: '#36313D',
     persianGreen: '#06B49A',
     powderWhite: '#FFFDF9',
+    red: 'red',
   },
   fonts: ['sans-serif', 'Roboto'],
   fontSizes: {

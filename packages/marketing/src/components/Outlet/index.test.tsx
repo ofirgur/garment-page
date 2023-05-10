@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { render } from '../../utils/test';
 
-import Layout from './';
+import Outlet from './';
 
-describe('Layout', () => {
+describe('Outlet', () => {
   it('Should render correctly', () => {
-    const { container } = render(<Layout />);
+    const { container } = render(<Outlet />);
     expect(container).toMatchSnapshot();
   });
 });
