@@ -6,11 +6,21 @@ import {
 
 import * as React from 'react';
 import { ReactElement } from 'react';
-import Theme from 'utils/theme/components/ThemeProvider';
+import ReactQueryProvider from 'utils/api/components/ReactQueryProvider';
+import { PageStateContextProvider } from 'utils/state';
+import { INITIAL_PAGE_STATE } from 'utils/state/initial';
+import ThemeProvider from 'utils/theme/components/ThemeProvider';
 
 export const render = (
   ui: ReactElement,
   options?: Omit<RenderOptions, 'queries'>,
 ): RenderResult => {
-  return rtlRender(<Theme>{ui}</Theme>, options);
+  return rtlRender(
+    <PageStateContextProvider initialState={INITIAL_PAGE_STATE}>
+      <ThemeProvider>
+        <ReactQueryProvider>{ui}</ReactQueryProvider>
+      </ThemeProvider>
+    </PageStateContextProvider>,
+    options,
+  );
 };
