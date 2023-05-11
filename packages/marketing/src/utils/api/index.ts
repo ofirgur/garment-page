@@ -24,9 +24,14 @@ export const DEFAULT_MOCK_CONFIG = {
 axios.defaults.baseURL = DEFAULT_BASE_URL;
 
 export const createAPIAction =
-  (requestConfig: AxiosRequestConfig, mockConfig?: MockConfig) => () => {
+  (
+    requestConfig: AxiosRequestConfig,
+    getMockConfig?: () => Promise<MockConfig>,
+  ) =>
+  async () => {
     if (USE_MOCK) {
-      const { mockDelay, mockResponse } = mockConfig || DEFAULT_MOCK_CONFIG;
+      const { mockDelay, mockResponse } =
+        (await getMockConfig()) || DEFAULT_MOCK_CONFIG;
       // This sets the mock adapter on the default instance
       const mock = new MockAdapter(axios, { delayResponse: mockDelay });
       // Match ALL requests
@@ -34,4 +39,11 @@ export const createAPIAction =
     }
 
     return axios(requestConfig).then(res => res.data);
+  };
+
+export const lazyMock =
+  (importPromise: Promise<{ default: MockConfig }>) => async () => {
+    const module = await importPromise;
+
+    return module.default;
   };
