@@ -42,8 +42,8 @@ export const createAPIAction =
   };
 
 export const lazyMock =
-  (importPromise: Promise<{ default: MockConfig }>) => async () => {
-    const module = await importPromise;
+  (importPromise: () => Promise<{ default: MockConfig }>) => async () => {
+    const module = await importPromise();
 
     return module.default;
   };

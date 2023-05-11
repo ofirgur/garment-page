@@ -16,7 +16,7 @@ const Outlet = () => {
       {
         url: 'users/1',
       },
-      lazyMock(import('./mock')),
+      lazyMock(() => import('./mock')),
     ),
     {
       onSuccess: (res: any) => {
