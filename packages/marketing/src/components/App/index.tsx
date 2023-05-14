@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { PageStateContextProvider } from '../../utils/state';
-import { INITIAL_PAGE_STATE } from '../../utils/state/initial';
-import ReactQueryProvider from '../../utils/api/components/ReactQueryProvider';
-import ThemeProvider from '../../utils/theme/components/ThemeProvider';
+import { PageStateContextProvider } from 'utils/state';
+import { INITIAL_PAGE_STATE } from 'utils/state/initial';
+import ReactQueryProvider from 'utils/api/components/ReactQueryProvider';
+import ThemeProvider from 'utils/theme/components/ThemeProvider';
+import 'utils/intl/i18n';
 import Router from '../Router';
-import '../../utils/intl/i18n';
 
 const App = () => {
   return (

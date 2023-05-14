@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { usePageState } from '../../utils/state';
-import DateFormat from '../../utils/intl/i10n/components/DateFormat';
-import NumberFormat from '../../utils/intl/i10n/components/NumberFormat';
+import { usePageState } from 'utils/state';
+import DateFormat from 'utils/intl/i10n/components/DateFormat';
+import NumberFormat from 'utils/intl/i10n/components/NumberFormat';
 import { LayoutStyled } from './styled';
 
 const Layout = () => {
