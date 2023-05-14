@@ -1,14 +1,14 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, createMemoryRouter } from 'react-router-dom';
-import { routes } from './components/Router';
+import Router from './components/Router';
 import App from './components/App';
 
 // Mount function to start up the app
 const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   const router =
     defaultHistory ||
-    createMemoryRouter(routes, {
+    createMemoryRouter(Router, {
       initialEntries: [initialPath],
     });
 
@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'development') {
   const devRoot = document.querySelector('#_marketing-dev-root');
 
   if (devRoot) {
-    mount(devRoot, { defaultHistory: createBrowserRouter(routes) });
+    mount(devRoot, { defaultHistory: createBrowserRouter(Router) });
   }
 }
 

@@ -3,7 +3,7 @@ import { createRoutesFromElements, Route } from 'react-router-dom';
 
 import Outlet from '../Outlet';
 
-export const routes = createRoutesFromElements(
+export default createRoutesFromElements(
   <>
     <Route path="/" element={<Outlet />} />
     <Route path="*" element={null} />
