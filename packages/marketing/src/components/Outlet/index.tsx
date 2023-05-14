@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
 
-import { createAPIAction } from '../../utils/api';
+import { createAPIAction, lazyMock } from '../../utils/api';
 import { usePageState } from '../../utils/state';
 import PageLoader from '../PageLoader';
 import Layout from '../Layout';
@@ -16,19 +16,7 @@ const Outlet = () => {
       {
         url: 'users/1',
       },
-      {
-        mockDelay: 2000,
-        mockResponse: {
-          status: 200,
-          data: {
-            id: 111,
-            name: 'Ofir Gur',
-            locale: 'ja-JP',
-            currency: 'JPY',
-            lang: 'ja',
-          },
-        },
-      },
+      lazyMock(() => import('./mock')),
     ),
     {
       onSuccess: (res: any) => {
