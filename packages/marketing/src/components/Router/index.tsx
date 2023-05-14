@@ -1,19 +1,11 @@
 import * as React from 'react';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from 'react-router-dom';
+import { createRoutesFromElements, Route } from 'react-router-dom';
 
 import Outlet from '../Outlet';
 
-const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Outlet />} />),
+export const routes = createRoutesFromElements(
+  <>
+    <Route path="/" element={<Outlet />} />
+    <Route path="*" element={null} />
+  </>,
 );
-
-const Router = () => {
-  return <RouterProvider router={router} />;
-};
-
-export default Router;
