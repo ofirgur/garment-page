@@ -5,7 +5,7 @@ import { createAPIAction, lazyMock } from 'utils/api';
 import { usePageState } from 'utils/state';
 
 export const useUserData = () => {
-  const { setPageState } = usePageState();
+  const { pageState, setPageState } = usePageState();
   const { i18n } = useTranslation();
   return useQuery(
     ['repo'],
@@ -16,12 +16,12 @@ export const useUserData = () => {
       lazyMock(() => import('./mock')),
     ),
     {
-      onSuccess: (res: any) => {
-        i18n.changeLanguage(res.lang);
+      onSuccess: (response: any) => {
+        i18n.changeLanguage(response.lang);
         setPageState({
           user: {
-            ...res.user,
-            ...res,
+            ...pageState.user,
+            ...response,
           },
         });
       },
